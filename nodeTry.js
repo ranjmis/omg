@@ -12,13 +12,12 @@ fs.mkdir(target);
 
 // a request
 
-var req = http.request('http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js', function(res){
+http.get('http://yui.yahooapis.com/3.7.2/build/yui/yui-min.js', function(res){
 	res.setEncoding('utf8');
 	res.on('data', function(data){
 		console.log(lib.minify(data));
 	})
 });
-req.end();
 
 // a req in another style
 
